@@ -1,4 +1,5 @@
 <?php
+phpinfo();
 ini_set('display_errors', 1);
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Cache-Control: post-check=0, pre-check=0", false);
@@ -31,7 +32,7 @@ if(isset($_POST["submit"])) {
   $uploadOk = 1;
   $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
     move_uploaded_file($_FILES["file"]["tmp_name"], $target_file);
-    
+
     $imagick = new Imagick($target_file);
 $imagick->setImageFormat('jpg');
 file_put_contents($target_dir .$filename, $imagick);
