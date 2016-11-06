@@ -31,7 +31,7 @@ if(isset($_POST["submit"])) {
   $uploadOk = 1;
   $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
     move_uploaded_file($_FILES["file"]["tmp_name"], $target_file);
-    
+
     $imagick = new Imagick($target_file);
 $imagick->setImageFormat('jpg');
 file_put_contents($target_dir .$filename, $imagick);
@@ -247,9 +247,9 @@ function DownloadFile($url, $path)
       $('#fnameid').val(file_val)
       $('#toggle-div').css({display: ''});
       d = new Date();
-      $('#img-load').attr('src','http://103.9.171.165/~mirza/uploads/thumb'+file_val+'.jpg?'+d.getTime());
+      $('#img-load').attr('src','http://128.199.245.19/uploads/thumb'+file_val+'.jpg?'+d.getTime());
       $('#upload-date').html('Last Uploaded at '+$(this).children('a').attr('update'))
-      $('#toggle-div a').attr('href','http://103.9.171.165/~mirza/uploads/'+file_val+'.jpg?'+d.getTime())
+      $('#toggle-div a').attr('href','http://128.199.245.19/uploads/'+file_val+'.jpg?'+d.getTime())
     })
   })
 
